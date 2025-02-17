@@ -1,8 +1,8 @@
 // Task 1 - Employee Salary Declaration
 
 function calculateSalary(baseSalary, bonus, taxRate){
-    let NetSalary = (baseSalary + bonus) - (baseSalary * taxRate);
-    console.log(`Net Salary: $${NetSalary}`);
+    let netSalary = (baseSalary + bonus) - (baseSalary * taxRate);
+    console.log(`Net Salary: $${netSalary}`);
 }
 calculateSalary(5000, 500, 0.1); // Expected output: "Net Salary: $5000.00"
 calculateSalary(7000, 1000, 0.15); // Expected output: "Net Salary: $6950.00"
@@ -19,7 +19,8 @@ calculateDiscount(250, 0.15); // Expected output: "Final Price: $212.50"
 //Task 3 - Service Fee Calculation
 
 const calculateServiceFee = (amount, serviceType) => {
-    let serviceFee = 0;
+    let total = 0;
+
     if (serviceType === "Premium") total = amount * 0.15;
     else if (serviceType === "Standard") total = amount * 0.1;
     else if (serviceType === "Basic") total = amount * 0.05;
@@ -32,6 +33,7 @@ calculateServiceFee(500, "Standard"); // Expected output: "Service Fee: $50.00"
 //Task 4 - Car Rental Cost Calcualtion
 
 function calculateRentalCost(days, carType, insurance = false){
+
     if (carType === "Economy") cost = days * 40;
     else if (carType === "Standard") cost = days * 60;
     else if (carType === "Luxury") cost = days * 100;
@@ -45,7 +47,7 @@ calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost:
 //Task 5 - Loan Payment Calculation
 
 function calculateLoanPayment(principal, rate, time){
-    totalPayment = principal + (principal * rate * time);
+    let totalPayment = principal + (principal * rate * time);
     console.log(`Total Payment: $${totalPayment}`);
 }
 calculateLoanPayment(1000, 0.05, 2); // Expected output: "Total Payment: $1100.00"
@@ -55,7 +57,7 @@ calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.0
 
 let transactions = [200, 1500, 3200, 800, 2500];
 
-let filterLargeTransactions = (transactions, filterFunction) => {
+const filterLargeTransactions = (transactions, filterFunction) => {
     return transactions.filter(filterFunction);
 };
 console.log(filterLargeTransactions(transactions,amount => amount > 1000)); 
@@ -83,5 +85,5 @@ function calculateGrowth(years, revenue) {
     }
     return calculateGrowth(years + 1, revenue * 1.05);
 }
-console.log(calculateGrowth(8,1000));// projected revenue shoud be $1102.50
-console.log(calculateGrowth(5,5000)); // projected revenue should be $6381 
+console.log(calculateGrowth(8,1000));// Projected revenue shoud be $1102.50
+console.log(calculateGrowth(5,5000)); // Projected revenue should be $6381 
