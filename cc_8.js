@@ -43,6 +43,7 @@ calculateRentalCost(3, "Economy", true); // Expected output: "Total Rental Cost:
 calculateRentalCost(5, "Luxury", false); // Expected output: "Total Rental Cost: $500"
 
 //Task 5 - Loan Payment Calculation
+
 function calculateLoanPayment(principal, rate, time){
     totalPayment = principal + (principal * rate * time);
     console.log(`Total Payment: $${totalPayment}`);
@@ -51,6 +52,7 @@ calculateLoanPayment(1000, 0.05, 2); // Expected output: "Total Payment: $1100.0
 calculateLoanPayment(5000, 0.07, 3); // Expected output: "Total Payment: $6050.00"
 
 //Task 6 - Identifying Large Transactions
+
 let transactions = [200, 1500, 3200, 800, 2500];
 
 let filterLargeTransactions = (transactions, filterFunction) => {
@@ -63,6 +65,7 @@ console.log(filterLargeTransactions(transactions,amount => amount > 1000));
 
 function createCartTracker() {
     let balance = 0;
+
     return function (expense){
         balance += expense;
         return `Total Cart Value: $${balance}`;
@@ -71,3 +74,14 @@ function createCartTracker() {
 let cart = createCartTracker()
 console.log(cart(20)); // Expected output: "Total Cart Value: $20"
 console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+
+//Task 8 - Savings Growth Projection
+
+function calculateGrowth(years, revenue) {
+    if (years === 0 || years >=10) {
+        return `Projected Revenue $${revenue}`;
+    }
+    return calculateGrowth(years + 1, revenue * 1.05);
+}
+console.log(calculateGrowth(8,1000));// projected revenue shoud be $1102.50
+console.log(calculateGrowth(5,5000)); // projected revenue should be $6381 
